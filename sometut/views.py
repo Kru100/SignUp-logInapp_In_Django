@@ -1,10 +1,11 @@
-from django import render 
 
+# from models import Personal, Login
+from django.shortcuts import render
 
-def insert(request):
-    if request.method == "POST":
-        saverecord= Personal() 
-        saverecord.username = request.POST.get('username')       
+def HomePage(request):
+    return render(request,'home.html')
+    
+
 
 
 # def Insert(request):

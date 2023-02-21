@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Just</title>
+    </head>
+    <body>
+        {% comment %} <left>
+            <a href="{% url 'Homepage' %}">
+                <button>HomePage</button>
+            </a>
+        </left> {% endcomment %}
+    
+        <center>
+            <h1 style="color:white;"> Sign Up </h1>
+            <hr/>
+            <form method="POST">
+                {% csrf_token %}
+            <table border="1" bgcolor="lightblue">
+                <tr>
+                    <td> User ID </td>
+                    <td><input type="text" placeholder="Enter User ID" name="user_id"></td>
+                </tr>
+                <tr>
+                    <td> User Name </td>
+                    <td><input type="text" placeholder="Enter User Name" name="user_name"></td>
+                </tr>
+                <tr>
+                    <td> Age </td>
+                    <td><input type="text" placeholder="Age" name="age"></td>
+                </tr>
+                <tr>
+                    <td> Password </td>
+                    <td><input type="text" placeholder="password" name="Password"></td>
+                </tr>
+                <tr>
+                    <td> <input type="submit" value="Insert"/> </td>
+                    <td>
+                        {% if messages %}
+                        {% for mess in messages %}
+                        <b style="color: yellow;">{{mess}}</b>
+                        {% endfor %}
+                        {% endif %}
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </center>
+    </body>
+</html>   

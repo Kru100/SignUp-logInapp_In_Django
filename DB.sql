@@ -1,2 +1,3 @@
-select * from personal
-alter table personal add column "27/07/15" bool
+select * from Personal
+Alter table Personal
+add column "Password" varchar
