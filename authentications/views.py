@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from . import models
+from .models import Personal 
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from sometut.views import HomePage
@@ -18,11 +18,12 @@ def signup(request):
             for i in allval:
                 if i.user_id == request.POST.get('user_id'):
                     messages.warning(request,'Please have a uniqe User ID...')
-                    return render(request,'signup.html')
+                    return render(request,'signup.html', )
                 
         saverec.save()
-        messages.suceess(request,'Welcome ' + saverec.user_name + 'in our service')
-        return render(request,'templates/signup.html')
+        messages.success(request,'Welcome ' + saverec.user_name + ' in our service')
+    
+    return render(request,'signup.html')
 
 def login(request):
     if request.method == "POST":
