@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login
 from sometut.views import HomePage
 from django.contrib.auth.hashers import make_password, check_password
+from django.urls import reverse_lazy
 
 def signup(request):
     if request.method == 'POST':
@@ -40,7 +41,7 @@ def login(request):
             # print(user)
             # if user is not None:
                 # login(request, user)
-            return redirect('HomePage')
+            return redirect('/home/')
         error_msg = 'Invalid user ID or password. Please try again.'
         messages.error(request, error_msg)
         return redirect('login')
